@@ -1,4 +1,5 @@
 import React from 'react'
+import BannerCard from '../home/BannerCard'
 
 function Banner() {
   return (
@@ -15,7 +16,9 @@ function Banner() {
             </div>
 
             {/* right side */}
-            <div>Right side</div>
+            <div>
+                <BannerCard/>
+            </div>
         </div>
     </div>
   )
