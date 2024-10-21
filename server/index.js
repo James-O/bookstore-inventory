@@ -23,7 +23,8 @@ const bookstoreSchema = new mongoose.Schema({
     imageUrl: String,
     category: String,
     description: String,
-    bookPdfUrl: String
+    bookPdfUrl: String,
+    price:Number
   });
 
 const bookModel = mongoose.model('book', bookstoreSchema);
@@ -67,7 +68,7 @@ app.get('/books-by-category/:category',async(req,res)=>{
 })
 
 //update book
-app.put('/book/:id',async(req,res)=>{
+app.put('/update-book/:id',async(req,res)=>{
   const id = req.params.id;
   const data = req.body;
   await bookModel.findByIdAndUpdate({_id:id}, data, {new: true})

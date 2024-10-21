@@ -6,11 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-//import './styles.css';
-
+import Avaterone from '../assets/bookimages/avaterone.avif'
+import Avatertwo from '../assets/bookimages/avatertwo.avif'
+import Avaterthree from '../assets/bookimages/avaterthree.avif'
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+import { Avatar } from "flowbite-react";
+
 
 function Reviews() {
   return (
@@ -22,9 +25,13 @@ function Reviews() {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
-                pagination={{
-                clickable: true,
-                }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                // pagination={{
+                // clickable: true,
+                // }}
                 breakpoints={{
                 640: {
                     slidesPerView: 1,
@@ -39,11 +46,11 @@ function Reviews() {
                     spaceBetween: 50,
                 },
                 }}
-                modules={[Pagination]}
+                modules={[Pagination,Autoplay]}
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
                         <div className='flex text-amber-500'>
                             <FaStar/>
                             <FaStar/>
@@ -51,13 +58,25 @@ function Reviews() {
                             <FaStar/>
                         </div>
                         {/* text */}
-                        <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, explicabo vel soluta nulla temporibus quibusdam tenetur distinctio, recusandae minima veniam cumque nisi incidunt illo ipsum id tempora excepturi alias adipisci.</p>
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, explicabo vel soluta nulla temporibus quibusdam tenetur distinctio, recusandae minima veniam cumque nisi incidunt illo ipsum id tempora excepturi alias adipisci.</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avaterone} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                    <p className='text-base'>CEO, ABC Company</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
                         <div className='flex text-amber-500'>
                             <FaStar/>
                             <FaStar/>
@@ -65,13 +84,25 @@ function Reviews() {
                             <FaStar/>
                         </div>
                         {/* text */}
-                        <div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro nihil omnis excepturi deserunt tempora beatae, facere, minima aut eaque distinctio quibusdam explicabo tenetur ut delectus laudantium veritatis, saepe impedit obcaecati.</p>
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ad exercitationem deserunt voluptate beatae mollitia quas repellat vel quae, nulla error porro totam odio ipsam porro totam odio ipsam nihil tenetur provident eligendi.</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avatertwo} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Smart Ping</h5>
+                                    <p className='text-base'>CEO, Kings Company</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
                         <div className='flex text-amber-500'>
                             <FaStar/>
                             <FaStar/>
@@ -79,13 +110,101 @@ function Reviews() {
                             <FaStar/>
                         </div>
                         {/* text */}
-                        <div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur molestiae provident libero harum tempore saepe, numquam possimus veniam natus maxime reiciendis eveniet in quasi cupiditate, facilis ipsum voluptate sit. Animi?</p>
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit dolorem quos culpa nulla deleniti eveniet cupiditate quo. Doloremque ad odit odio dolor, officia quaerat sapiente quasi perferendis quod ipsa?</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avaterthree} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Money Ping</h5>
+                                    <p className='text-base'>CEO, XYZ Company</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
-                
-                {/* <SwiperSlide>Slide 9</SwiperSlide> */}
+                <SwiperSlide>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='flex text-amber-500'>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                        </div>
+                        {/* text */}
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ad exercitationem deserunt voluptate beatae mollitia quas repellat vel quae, nulla error porro totam odio ipsam porro totam odio ipsam nihil tenetur provident eligendi.</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avatertwo} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                    <p className='text-base'>CEO, ABC Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='flex text-amber-500'>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                        </div>
+                        {/* text */}
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, explicabo vel soluta nulla temporibus quibusdam tenetur distinctio, recusandae minima veniam cumque nisi incidunt illo ipsum id tempora excepturi alias adipisci.</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avaterone} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Smart Ping</h5>
+                                    <p className='text-base'>CEO, Kings Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='flex text-amber-500'>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                            <FaStar/>
+                        </div>
+                        {/* text */}
+                        <div className='mt-7'>
+                            <p className='mb-5'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit dolorem quos culpa nulla deleniti eveniet cupiditate quo. Doloremque ad odit odio dolor, officia quaerat sapiente quasi perferendis quod ipsa?</p>
+                            <div className='flex gap-4'>
+                                <Avatar 
+                                    img={Avaterthree} 
+                                    alt="avatar of Jese" 
+                                    rounded 
+                                    className='w-10 mb-4'
+                                />
+                                <div>
+                                    <h5 className='text-lg font-medium'>Money Ping</h5>
+                                    <p className='text-base'>CEO, XYZ Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
             </Swiper>
         </div>
     </div>

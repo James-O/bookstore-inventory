@@ -59,7 +59,7 @@ function BookCard({headline,books}) {
                                 <h2>{book.authorName}</h2>
                             </div>
                             <div>
-                                <p>$10.00</p>
+                                <p>${book.price}</p>
                             </div>
                             {/* <p>{book.description.substring(0, 100)}...</p> */}
                         </div>

@@ -1,15 +1,17 @@
 import './App.css'
 import { Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import MyFooter from './components/Footer'
 
 function App() {
 
   return (
     <>
       <Navbar/>
-      {/* <nav>Site Logo</nav> */}
-      <Outlet/>
-      {/* <h1>Welcome to my book collection</h1> */}
+      <div className='min-h-screen'>
+        <Outlet/>
+      </div>
+      <MyFooter/>
     </>
   )
 }

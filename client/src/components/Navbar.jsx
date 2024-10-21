@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaBarsStaggered, FaBlog, FaXmark} from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
+
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+
+    const {user} = useContext(AuthContext)
+    //console.log(user)
 //toggle menu
     const toggleMenu  = ()=>{
         setIsMenuOpen(!isMenuOpen);
@@ -52,8 +57,18 @@ function Navbar() {
                 {/* btn for lg device */}
                 <div className='space-x-20 hidden lg:flex items-center'>
                     <button className="bg-blue-800 text-white  py-3 px-5 hover:bg-blue-500">
-                        <FaBarsStaggered/>
-                    </button>
+                        <FaBarsStaggered/> 
+                    </button> 
+                    {
+                        // user ? user.email:""
+                        user ?
+                        <div className='flex items-center gap-2'>
+                            <Link to='/profile' className=' text-blue-800 3xl'>{user.email}</Link>
+                            <Link to={'/logout'} className=' text-blue-800 3xl'>Logout</Link>
+                        </div>
+                        :
+                        <Link to='/login' className=' text-blue-800 3xl'>Login</Link>
+                    }
                 </div>
                 {/* menu for mobile device */}
                 <div className='md:hidden'>
