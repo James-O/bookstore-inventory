@@ -1,0 +1,1 @@
+The Bookstore Inventory Management System is a comprehensive application designed to streamline the management of a bookstore’s inventory. This project provides essential functionalities to efficiently handle book data, ensuring an organized and up-to-date inventory.
